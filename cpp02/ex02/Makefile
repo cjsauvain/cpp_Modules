@@ -6,7 +6,7 @@
 #    By: jsauvain <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 16:05:24 by jsauvain          #+#    #+#              #
-#    Updated: 2023/03/16 16:08:26 by jsauvain         ###   ########.fr        #
+#    Updated: 2023/03/31 19:09:56 by jsauvain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,22 +15,27 @@ NAME = fixedPoint
 SRCS =	main.cpp	\
 		Fixed.cpp	\
 
-OBJS = $(SRCS:.cpp=.o)
+OBJS_PATH = objects/
+
+OBJS = $(SRCS:%.cpp=$(OBJS_PATH)%.o)
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-.cpp.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
+$(OBJS_PATH)%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=$(OBJS_PATH)%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+objects:
+		@mkdir objects
+
+$(NAME): objects $(OBJS)
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-		rm -rf $(OBJS)
+		rm -rf $(OBJS_PATH)
 
 fclean: clean
 		rm -rf $(NAME)

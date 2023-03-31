@@ -6,7 +6,7 @@
 #    By: jsauvain <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/08 11:27:39 by jsauvain          #+#    #+#              #
-#    Updated: 2023/03/13 16:14:07 by jsauvain         ###   ########.fr        #
+#    Updated: 2023/03/31 18:53:21 by jsauvain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,22 +15,27 @@ NAME = account
 SRCS =	tests.cpp	\
 		Account.cpp	\
 
-OBJS = $(SRCS:.cpp=.o)
+OBJS_PATH = objects/
+
+OBJS = $(SRCS:%.cpp=$(OBJS_PATH)%.o)
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-.cpp.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
-
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(OBJS_PATH)%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=$(OBJS_PATH)%.o)
 
 all: $(NAME)
 
+objects:
+		@mkdir objects
+
+$(NAME): objects $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJS_PATH)
 
 fclean: clean
 	rm -rf $(NAME)
