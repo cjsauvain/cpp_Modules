@@ -6,16 +6,15 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:24:03 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/01 18:35:46 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/04/01 18:40:08 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int	main(void)
 {
+	Intern	a;
 	try
 	{
 		Bureaucrat	george("George", 1);
@@ -33,18 +32,18 @@ int	main(void)
 			std::cerr << e.what() << std::endl;
 		}
 		try {
-			AForm*	form = new ShrubberyCreationForm("myGarden");
+			AForm*	form = a.makeForm("shrubbery creation", "myGarden");
 			for (int i = 0; i < 3; i++)
 			{
 				if (i == 1)
 				{
 					delete form;
-					form = new RobotomyRequestForm("cyborg");
+					form = a.makeForm("robotomy request", "cyborg");
 				}
 				else if (i == 2)
 				{
 					delete form;
-					form = new PresidentialPardonForm("john");
+					form = a.makeForm("presidential pardon", "john");
 				}
 				try {
 					george.signForm(*form);
