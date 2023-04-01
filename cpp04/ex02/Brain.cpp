@@ -6,7 +6,7 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 14:47:56 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/03/29 20:53:09 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/04/01 18:30:10 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Brain::Brain(void)
 	std::string	ideas[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 	int			j;
 
+	srand(time(NULL));
 	for (int i = 0; i < 100; i++)
 	{
 		j = std::rand() % 9;
