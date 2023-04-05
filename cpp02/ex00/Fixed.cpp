@@ -6,7 +6,7 @@
 /*   By: jsauvain <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:54:33 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/03/21 15:50:16 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:50:24 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ Fixed::Fixed(void)
 	this->_number = 0;
 }
 
-Fixed::Fixed(Fixed const & copy) : _number(copy._number)
+Fixed::Fixed(Fixed const & copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
+	*this = copy;
 }
 
 Fixed::~Fixed(void)
