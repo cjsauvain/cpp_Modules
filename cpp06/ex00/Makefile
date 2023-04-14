@@ -9,7 +9,7 @@ OBJS = $(SRCS:%.cpp=$(OBJS_PATH)%.o)
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 $(OBJS_PATH)%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $(<:%.cpp=$(OBJS_PATH)%.o)
