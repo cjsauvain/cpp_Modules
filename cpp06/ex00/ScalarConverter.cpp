@@ -6,7 +6,7 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:49:27 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/14 20:31:20 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/04/15 13:19:12 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,9 @@ void	ScalarConverter::convertFromChar(std::string literal)
 	else
 		std::cout << "char: Non displayable\n";
 	std::cout << "int: " << static_cast<int>(literal[0]) << std::endl;
-	std::cout << "float: " << std::fixed << std::setprecision(1) << \
+	std::cout << "float: " << std::fixed << std::setprecision(3) << \
 		static_cast<float>(literal[0]) << "f\n";
-	std::cout << "double: " << std::fixed << std::setprecision(1) << \
+	std::cout << "double: " << std::fixed << std::setprecision(3) << \
 		static_cast<double>(literal[0]) << std::endl;
 }
 
@@ -105,14 +105,14 @@ void	ScalarConverter::convertFromInt(std::string literal)
 		std::cout << "Unvalid value : overflow\n";
 		return ;
 	}
-	if (literalValue >= 32 && literalValue <= 126)
+	if (literalValue >= 32 && literalValue < 127)
 		std::cout << "char: " << static_cast<char>(literalValue) << std::endl;
 	else
 		std::cout << "char: Non displayable\n";
 	std::cout << "int: " << literalValue << std::endl;
-	std::cout << "float: " << std::fixed << std::setprecision(1) << \
+	std::cout << "float: " << std::fixed << std::setprecision(3) << \
 		static_cast<float>(literalValue) << "f\n";
-	std::cout << "double: " << std::fixed << std::setprecision(1) << \
+	std::cout << "double: " << std::fixed << std::setprecision(3) << \
 		static_cast<double>(literalValue) << std::endl;
 }
 
@@ -126,7 +126,7 @@ void	ScalarConverter::convertFromFloat(std::string literal)
 		std::cout << "Unvalid value : overflow\n";
 		return ;
 	}
-	if (literalValue >= 32 && literalValue <= 126)
+	if (literalValue >= 32 && literalValue < 127)
 		std::cout << "char: " << static_cast<char>(literalValue) << std::endl;
 	else
 		std::cout << "char: Non displayable\n";
@@ -134,9 +134,9 @@ void	ScalarConverter::convertFromFloat(std::string literal)
 		std::cout << "int: overflow\n";
 	else
 		std::cout << "int: " << static_cast<int>(literalValue) << std::endl;
-	std::cout << "float: " << std::fixed << std::setprecision(1) << \
+	std::cout << "float: " << std::fixed << std::setprecision(3) << \
 		literalValue << "f\n";
-	std::cout << "double: " << std::fixed << std::setprecision(1) << \
+	std::cout << "double: " << std::fixed << std::setprecision(3) << \
 		static_cast<double>(literalValue) << std::endl;
 }
 
@@ -150,7 +150,7 @@ void	ScalarConverter::convertFromDouble(std::string literal)
 		std::cout << "Unvalid value : overflow\n";
 		return ;
 	}
-	if (literalValue >= 32 && literalValue <= 126)
+	if (literalValue >= 32 && literalValue < 127)
 		std::cout << "char: " << static_cast<char>(literalValue) << std::endl;
 	else
 		std::cout << "char: Non displayable\n";
@@ -163,9 +163,9 @@ void	ScalarConverter::convertFromDouble(std::string literal)
 	else if (literalValue < FLT_MIN)
 		std::cout << "float: -inff\n";
 	else
-		std::cout << "float: " << std::fixed << std::setprecision(1) << \
+		std::cout << "float: " << std::fixed << std::setprecision(3) << \
 			literalValue << "f\n";
-	std::cout << "double: " << std::fixed << std::setprecision(1) << \
+	std::cout << "double: " << std::fixed << std::setprecision(3) << \
 		static_cast<double>(literalValue) << std::endl;
 }
 

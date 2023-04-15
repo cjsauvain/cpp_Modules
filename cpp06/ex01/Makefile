@@ -1,6 +1,7 @@
-NAME = 
+NAME = Serializer
 
-SRCS =	
+SRCS =	main.cpp		\
+		Serializer.cpp	\
 
 OBJS_PATH = objects/
 

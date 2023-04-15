@@ -6,9 +6,12 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:03:20 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/14 20:26:29 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/04/15 15:34:58 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef SCALARCONVERTER_HPP
+# define SCALARCONVERTER_HPP
 
 #include <iostream>
 #include <sstream>
@@ -34,3 +37,5 @@ class ScalarConverter
 	private:
 		ScalarConverter(void);
 };
+
+#endif
