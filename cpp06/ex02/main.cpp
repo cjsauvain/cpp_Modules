@@ -6,7 +6,7 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 14:30:42 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/15 16:29:44 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/04/16 13:39:49 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,15 @@ Base*	generate(void)
 
 	srand(time(NULL));
 	i = std::rand() % 3;
-	if (i == 0)
-		return (new A());
-	if (i == 1)
-		return (new B());
-	if (i == 2)
-		return (new C());
+	switch (i)
+	{
+		case 0:
+			return (new A());
+		case 1:
+			return (new B());
+		case 2:
+			return (new C());
+	}
 	return (NULL);
 }
 
