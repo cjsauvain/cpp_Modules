@@ -6,7 +6,7 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 16:12:11 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/17 16:10:27 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:19:41 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ Array<T>::Array(unsigned int n) : _arrayLength(n)
 template <typename T>
 Array<T>::Array(Array<T> const & source)
 {
+	_array = NULL;
 	*this = source;
 }
 
@@ -65,7 +66,7 @@ Array<T> &	Array<T>::operator=(Array<T> const & source)
 	{
 		_arrayLength = source._arrayLength;
 		delete _array;
-		_array = new T(_arrayLength);
+		_array = new T[_arrayLength];
 		for (unsigned int i = 0; i < _arrayLength; i++)
 			_array[i] = source._array[i];
 	}

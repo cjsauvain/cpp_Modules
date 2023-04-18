@@ -1,6 +1,6 @@
 NAME = templates
 
-SRCS =	main.cpp		\
+SRCS =	main2.cpp		\
 
 OBJS_PATH = objects/
 
