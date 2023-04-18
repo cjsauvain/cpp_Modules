@@ -6,7 +6,7 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 16:29:23 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/03/31 15:56:03 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/04/17 19:17:22 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	Form::getGradeToExecute(void) const
 
 void	Form::beSigned(Bureaucrat const & John)
 {
-	if (John.getGrade() >= _gradeToSign)
+	if (John.getGrade() > _gradeToSign)
 		throw GradeTooLowException(John.getName() + " couldn't sign because his grade is too low");
 	_signed = 1;
 }
