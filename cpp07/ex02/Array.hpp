@@ -6,9 +6,12 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 16:12:11 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/17 17:19:41 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/04/18 20:08:00 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 
 #include <iostream>
 #include <stdexcept>
@@ -90,3 +93,5 @@ unsigned int	Array<T>::size(void) const
 {
 	return (_arrayLength);
 }
+
+#endif
