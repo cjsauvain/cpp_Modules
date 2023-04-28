@@ -6,7 +6,7 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:49:27 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/15 13:19:12 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/04/28 20:01:06 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,11 @@ int		ScalarConverter::isChar(std::string literal)
 int		ScalarConverter::isInt(std::string literal)
 {
 	size_t	pos;
+	int		i = 0;
 
-	pos = literal.find_first_not_of("0123456789");
+	if (literal[0] == '-')
+		i = 1;
+	pos = literal.find_first_not_of("0123456789", i);
 	if (pos == std::string::npos)
 		return (1);
 	return (0);
@@ -57,8 +60,11 @@ int		ScalarConverter::isInt(std::string literal)
 int		ScalarConverter::isFloat(std::string literal)
 {
 	size_t	pos;
+	int		i = 0;
 
-	pos = literal.find_first_not_of("0123456789");
+	if (literal[0] == '-')
+		i = 1;
+	pos = literal.find_first_not_of("0123456789", i);
 	if (pos != std::string::npos && literal[pos] == '.')
 	{
 		pos = literal.find_first_not_of("0123456789", pos + 1);
@@ -71,8 +77,11 @@ int		ScalarConverter::isFloat(std::string literal)
 int		ScalarConverter::isDouble(std::string literal)
 {
 	size_t	pos;
+	int		i = 0;
 
-	pos = literal.find_first_not_of("0123456789");
+	if (literal[0] == '-')
+		i = 1;
+	pos = literal.find_first_not_of("0123456789", i);
 	if (pos != std::string::npos && literal[pos] == '.')
 	{
 		pos = literal.find_first_not_of("0123456789", pos + 1);
@@ -89,9 +98,9 @@ void	ScalarConverter::convertFromChar(std::string literal)
 	else
 		std::cout << "char: Non displayable\n";
 	std::cout << "int: " << static_cast<int>(literal[0]) << std::endl;
-	std::cout << "float: " << std::fixed << std::setprecision(3) << \
+	std::cout << "float: " << std::fixed << std::setprecision(1) << \
 		static_cast<float>(literal[0]) << "f\n";
-	std::cout << "double: " << std::fixed << std::setprecision(3) << \
+	std::cout << "double: " << std::fixed << std::setprecision(1) << \
 		static_cast<double>(literal[0]) << std::endl;
 }
 
@@ -110,9 +119,9 @@ void	ScalarConverter::convertFromInt(std::string literal)
 	else
 		std::cout << "char: Non displayable\n";
 	std::cout << "int: " << literalValue << std::endl;
-	std::cout << "float: " << std::fixed << std::setprecision(3) << \
+	std::cout << "float: " << std::fixed << std::setprecision(1) << \
 		static_cast<float>(literalValue) << "f\n";
-	std::cout << "double: " << std::fixed << std::setprecision(3) << \
+	std::cout << "double: " << std::fixed << std::setprecision(1) << \
 		static_cast<double>(literalValue) << std::endl;
 }
 
@@ -134,9 +143,9 @@ void	ScalarConverter::convertFromFloat(std::string literal)
 		std::cout << "int: overflow\n";
 	else
 		std::cout << "int: " << static_cast<int>(literalValue) << std::endl;
-	std::cout << "float: " << std::fixed << std::setprecision(3) << \
+	std::cout << "float: " << std::fixed << std::setprecision(1) << \
 		literalValue << "f\n";
-	std::cout << "double: " << std::fixed << std::setprecision(3) << \
+	std::cout << "double: " << std::fixed << std::setprecision(1) << \
 		static_cast<double>(literalValue) << std::endl;
 }
 
@@ -163,9 +172,9 @@ void	ScalarConverter::convertFromDouble(std::string literal)
 	else if (literalValue < FLT_MIN)
 		std::cout << "float: -inff\n";
 	else
-		std::cout << "float: " << std::fixed << std::setprecision(3) << \
+		std::cout << "float: " << std::fixed << std::setprecision(1) << \
 			literalValue << "f\n";
-	std::cout << "double: " << std::fixed << std::setprecision(3) << \
+	std::cout << "double: " << std::fixed << std::setprecision(1) << \
 		static_cast<double>(literalValue) << std::endl;
 }
 
