@@ -6,26 +6,33 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 18:53:51 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/18 18:57:09 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/04/19 14:38:13 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#pragma once
 
-template <typename T>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
 class Span
 {
 	public:
 		Span(void);
-		Span(T intArray);
-		Span(Span<T> const & source);
+		Span(unsigned int N);
+		Span(Span const & source);
 		~Span(void);
 
-		Span<T> &	operator=(Span<T> const & source);
+		Span &	operator=(Span const & source);
 
 		void	addNumber(int number);
-		
+		void	addNbRange(std::vector<int>::iterator b, std::vector<int>::iterator e);
+		int		shortestSpan() const;
+		int		longestSpan() const;
+		void	printArrayInfos() const;
 
 	private:
-		T	_intArray;
+		std::vector<int>	_intArray;
+		unsigned int		_lengthMax;
 };
