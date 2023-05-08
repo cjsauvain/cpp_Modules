@@ -6,7 +6,7 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 16:12:11 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/18 20:08:00 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/05/06 16:11:23 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Array
 		~Array(void);
 
 		T &			operator[](long long int i);
-		Array &	operator=(Array<T> const & source);
+		Array &		operator=(Array<T> const & source);
 
 		unsigned int	size() const;
 
@@ -39,13 +39,13 @@ class Array
 template <typename T>
 Array<T>::Array(void) : _arrayLength(0)
 {
-	_array = NULL;
+	_array = new T[0]();
 }
 
 template <typename T>
 Array<T>::Array(unsigned int n) : _arrayLength(n)
 {
-	_array = new T[n]();
+	_array = new T[n];
 }
 
 template <typename T>
@@ -68,22 +68,20 @@ Array<T> &	Array<T>::operator=(Array<T> const & source)
 	if (this != &source)
 	{
 		_arrayLength = source._arrayLength;
-		delete _array;
+		delete []_array;
 		_array = new T[_arrayLength];
 		for (unsigned int i = 0; i < _arrayLength; i++)
 			_array[i] = source._array[i];
 	}
-	return *this;
+	return (*this);
 }
 
 template <typename T>
 T &	Array<T>::operator[](long long int i)
 {
-	if (i > _arrayLength)
-		throw std::out_of_range("std::exception : index out");
-	if (i < 0 || i > _arrayLength)
+	if (i < 0 || i >= _arrayLength)
 		throw std::out_of_range("std::exception : index out of range\n");
-	if (_arrayLength == 0)
+	else if (_arrayLength == 0)
 		throw std::out_of_range("std::exception : empty array");
 	return (_array[i]);
 }
