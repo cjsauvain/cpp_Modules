@@ -6,7 +6,7 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 14:19:56 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/15 14:27:33 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:15:21 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,21 @@
 
 Serializer::Serializer(void)
 {
+}
+
+Serializer::Serializer(Serializer const & source)
+{
+	*this = source;
+}
+
+Serializer::~Serializer(void)
+{
+}
+
+Serializer &	Serializer::operator=(Serializer const & source)
+{
+	(void)source;
+	return (*this);
 }
 
 uintptr_t	Serializer::serialize(Data* ptr)

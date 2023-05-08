@@ -6,7 +6,7 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:49:27 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/15 13:19:12 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:12:47 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,21 @@
 
 ScalarConverter::ScalarConverter(void)
 {
+}
+
+ScalarConverter::ScalarConverter(ScalarConverter const & source)
+{
+	*this = source;
+}
+
+ScalarConverter::~ScalarConverter(void)
+{
+}
+
+ScalarConverter &	ScalarConverter::operator=(ScalarConverter const & source)
+{
+	(void)source;
+	return (*this);
 }
 
 int		ScalarConverter::isException(std::string literal)
