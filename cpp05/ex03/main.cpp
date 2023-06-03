@@ -6,14 +6,16 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:24:03 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/01 18:40:08 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/06/02 17:58:39 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
+#include <cstdlib>
 
 int	main(void)
 {
+	srand(time(NULL));
 	Intern	a;
 	try
 	{
@@ -59,6 +61,7 @@ int	main(void)
 				}
 				std::cout << std::endl;
 			}
+			delete form;
 		}
 		catch (std::exception & e) {
 			std::cerr << e.what() << std::endl;

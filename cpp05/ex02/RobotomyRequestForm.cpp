@@ -6,12 +6,12 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 13:47:35 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/01 18:31:18 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/06/02 17:52:09 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cstdlib>
 #include "RobotomyRequestForm.hpp"
+#include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequest", 72, 45)
 {
@@ -42,7 +42,6 @@ RobotomyRequestForm &	RobotomyRequestForm::operator=(RobotomyRequestForm const &
 void	RobotomyRequestForm::executeFormAction(void) const
 {
 	std::cout << "* " << _target << "'s robotization started *" << std::endl;
-	srand(time(NULL));
 	if (std::rand() % 2)
 		std::cout << "Robotization successfull" << std::endl;
 	else

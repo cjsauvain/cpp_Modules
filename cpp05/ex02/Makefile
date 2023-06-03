@@ -6,11 +6,11 @@
 #    By: jsauvain <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 16:05:24 by jsauvain          #+#    #+#              #
-#    Updated: 2023/04/01 15:13:44 by jsauvain         ###   ########.fr        #
+#    Updated: 2023/06/02 17:39:31 by jsauvain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Form
+NAME = AForm
 
 SRCS =	main.cpp					\
 		Bureaucrat.cpp				\

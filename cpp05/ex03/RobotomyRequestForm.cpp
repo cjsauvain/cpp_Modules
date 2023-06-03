@@ -6,7 +6,7 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 13:47:35 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/01 18:30:46 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/06/02 17:40:14 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ RobotomyRequestForm &	RobotomyRequestForm::operator=(RobotomyRequestForm const &
 void	RobotomyRequestForm::executeFormAction(void) const
 {
 	std::cout << "* " << _target << "'s robotization started *" << std::endl;
-	srand(time(NULL));
 	if (std::rand() % 2)
 		std::cout << "Robotization successfull" << std::endl;
 	else

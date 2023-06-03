@@ -6,7 +6,7 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 16:16:00 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/01 16:08:56 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/06/02 17:54:07 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ class AForm
 				private:
 				std::string const	_phrase;
 		};
-		class UnsignedFormException : public std::exception
+		class FormException : public std::exception
 		{
 			public:
-				UnsignedFormException(void) throw();
-				UnsignedFormException(std::string phrase) throw();
-				~UnsignedFormException(void) throw();
+				FormException(void) throw();
+				FormException(std::string phrase) throw();
+				~FormException(void) throw();
 				const char*	what() const throw();
 				private:
 				std::string const	_phrase;

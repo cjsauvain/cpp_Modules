@@ -6,7 +6,7 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 13:54:11 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/01 15:48:44 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/06/02 17:57:55 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,5 @@ void	ShrubberyCreationForm::executeFormAction(void) const
 		ofs.close();
 	}
 	else
-		std::cout << "Couldn't open file " << _target + "_shrubbery\n";
+		throw FormException("Couldn't open file " + _target + "_shrubbery\n");
 }

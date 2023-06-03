@@ -6,11 +6,11 @@
 #    By: jsauvain <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 16:05:24 by jsauvain          #+#    #+#              #
-#    Updated: 2023/04/01 17:36:57 by jsauvain         ###   ########.fr        #
+#    Updated: 2023/06/02 17:39:41 by jsauvain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Form
+NAME = Intern
 
 SRCS =	main.cpp					\
 		Bureaucrat.cpp				\

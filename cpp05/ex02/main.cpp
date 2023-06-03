@@ -6,16 +6,18 @@
 /*   By: jsauvain <jsauvain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:24:03 by jsauvain          #+#    #+#             */
-/*   Updated: 2023/04/01 18:35:46 by jsauvain         ###   ########.fr       */
+/*   Updated: 2023/06/02 17:52:04 by jsauvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include <cstdlib>
 
 int	main(void)
 {
+	srand(time(NULL));
 	try
 	{
 		Bureaucrat	george("George", 1);
@@ -60,6 +62,7 @@ int	main(void)
 				}
 				std::cout << std::endl;
 			}
+			delete form;
 		}
 		catch (std::exception & e) {
 			std::cerr << e.what() << std::endl;
